@@ -9,7 +9,7 @@ namespace FixacaoEnum.Entities
 {
     internal class OrderItem
     {
-        public int Quantily { get; set; }
+        public int Quantity { get; set; }
         public double Price { get; set; }
 
         public Product Product { get; set; }
@@ -18,16 +18,16 @@ namespace FixacaoEnum.Entities
         {
         }
 
-        public OrderItem(int quantily, double price, Product product)
+        public OrderItem(int quantity, double price, Product product)
         {
-            Quantily = quantily;
+            Quantity = quantity;
             Price = price;
             Product = product;
         }
 
         public double SubTotal()
         {
-            return Price * Quantily;
+            return Price * Quantity;
         }
 
         public override string ToString()
@@ -36,7 +36,7 @@ namespace FixacaoEnum.Entities
                  + ", $"
                  + Price.ToString("F2", CultureInfo.InvariantCulture)
                  + ", Quantity: "
-                 + Quantily
+                 + Quantity
                  + ", Subtotal: $"
                  + SubTotal().ToString("F2", CultureInfo.InvariantCulture);
 
